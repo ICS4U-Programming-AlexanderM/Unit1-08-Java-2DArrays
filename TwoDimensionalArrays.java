@@ -115,6 +115,7 @@ public final class TwoDimensionalArrays {
         final String[][] studentMarks =
             new String[arrStudents.length + 1][arrAssignments.length + 1];
         int counter1 = 0;
+        int num = 0;
         final Random random = new Random();
 
         // Fill out header row.
@@ -128,8 +129,11 @@ public final class TwoDimensionalArrays {
             studentMarks[counter1 + 1][0] = student;
             for (int counter2 = 1;
                 counter2 <= arrAssignments.length; counter2++) {
-                studentMarks[counter1 + 1][counter2] =
-                    Long.toString(Math.round(random.nextGaussian() * 10 + 75));
+                // Only generate numbers between 0 and 100
+                do {
+                    num = (int)(random.nextGaussian() * 10 + 75);
+                } while (num < 0 || num > 100);
+                studentMarks[counter1 + 1][counter2] = Integer.toString(num);
             }
             counter1++;
         }
