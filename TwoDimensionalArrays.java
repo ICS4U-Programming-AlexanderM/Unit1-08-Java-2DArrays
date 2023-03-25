@@ -81,16 +81,16 @@ public final class TwoDimensionalArrays {
                     builder.append(row[column]);
                     if (column != row.length - 1) {
                         builder.append(", ");
+                    } else {
+                        builder.append("\n");
                     }
                 }
 
                 // Output to file.
                 output.write(builder.toString());
-                output.write("\n");
 
                 // Print to console.
-                System.out.println(builder.toString());
-                System.out.println("\n");
+                System.out.print(builder.toString());
             }
 
             // Close writer.
