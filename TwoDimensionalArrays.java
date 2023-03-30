@@ -131,7 +131,7 @@ public final class TwoDimensionalArrays {
                 counter2 <= arrAssignments.length; counter2++) {
                 // Only generate numbers between 0 and 100
                 do {
-                    num = (int)(random.nextGaussian() * 10 + 75);
+                    num = (int) (random.nextGaussian() * 10 + 75);
                 } while (num < 0 || num > 100);
                 studentMarks[counter1 + 1][counter2] = Integer.toString(num);
             }
